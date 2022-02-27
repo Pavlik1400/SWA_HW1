@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from multiprocessing import Process, Manager
+from multiprocessing import Manager
 
 
 logging_service = FastAPI()
