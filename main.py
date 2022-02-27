@@ -38,11 +38,11 @@ if __name__ == "__main__":
     parser.add_argument("--messages", action="store_const", const=True, help="start messages service")
     args = parser.parse_args()
     
-    ports: Dict[str, int] = yaml.load(open(args.config, 'r'), Loader=yaml.FullLoader)
+    config: Dict[str, int] = yaml.load(open(args.config, 'r'), Loader=yaml.FullLoader)
     
     try:
         os.chdir(SERVICES_PATH)
     except Exception as exc:
         print(f"Is main.py in right directory? \n{exc}")
 
-    main(args, ports)
+    main(args, config)
